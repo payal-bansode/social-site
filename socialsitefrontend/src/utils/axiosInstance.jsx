@@ -5,7 +5,7 @@ import { triggerAlertExternally } from '../context/AlertContext';
 // Base URL for your API
 
 // const API_URL ='http://localhost:8000';
-const API_URL ='http://backend:8000';
+const API_URL = import.meta.env.VITE_API_URL; // Get the API URL from .env
 
 // Create Axios instance
 const axiosInstance = axios.create({

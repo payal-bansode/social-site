@@ -24,8 +24,8 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('core-engine/admin/console/', admin.site.urls),
     
-    path('', include('account.urls')),
-    path('', include('post.urls')),
+    path('api/', include('account.urls')),
+    path('api/', include('post.urls')),
     
     
 ]
