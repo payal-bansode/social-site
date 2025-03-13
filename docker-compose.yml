@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./SocialSiteBackend/
+    container_name: backend
+    env_file:
+      - ./SocialSiteBackend/.env
+    volumes:
+      - ./SocialSiteBackend:/app  # Mount the backend code directory
+      - ./SocialSiteBackend/db.sqlite3:/app/db.sqlite3  # Mount the SQLite database file directly
+    ports:
+      - "8000:8000"
+    networks:
+      - mynetwork
+    depends_on:
+      - frontend  # Ensure the frontend is available first for serving assets (if needed)
+
+  frontend:
+    build:
+      context: ./socialsitefrontend/
+    container_name: frontend
+    networks:
+      - mynetwork
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+    command: ["nginx", "-g", "daemon off;"]  # Directly run NGINX in the container
+
+networks:
+  mynetwork:
+    driver: bridge

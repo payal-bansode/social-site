@@ -1,0 +1,33 @@
+# Ignore all .env files in any folder
+.env.django
+.env.dev
+.env*
+# Ignore virtual environments (for Django)
+/venv/
+
+
+# Ignore Python bytecode files
+**/__pycache__/
+**/*.pyc
+**/*.pyo
+
+
+
+
+
+# Ignore the cache directory used by Django for sessions and messages
+/.cache/
+
+
+
+# Ignore IDE files (VSCode, PyCharm, etc.)
+.vscode/
+.idea/
+
+# Ignore system files
+.DS_Store  # macOS system files
+Thumbs.db  # Windows system files
+
+# Ignore any other local files
+*.log
+
