@@ -4,7 +4,8 @@ import { triggerAlertExternally } from '../context/AlertContext';
 
 // Base URL for your API
 
-const API_URL ='http://localhost:8000';
+// const API_URL ='http://localhost:8000';
+const API_URL ='http://backend:8000';
 
 // Create Axios instance
 const axiosInstance = axios.create({
